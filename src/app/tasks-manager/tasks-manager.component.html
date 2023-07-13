@@ -1,3 +1,19 @@
 <div class="container">
-    <span>task manager</span>
+    <h2>Task Manager</h2>
+      <mat-form-field style="width: 600px;">
+        <input matInput placeholder="Description" [formControl]="taskDescriptionControl">
+        <mat-error *ngIf="taskDescriptionControl.hasError('required') || !taskDescriptionControl.touched">
+          Description is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    <mat-selection-list #tasksList>
+      <mat-action-list *ngFor="let task of tasks">
+        <div style="display: flex; justify-content: space-between;">
+          <mat-checkbox [checked]="task.completed" (change)="changeOptionValue($event, task)">{{task.taskDescription}}</mat-checkbox>
+          <button mat-raised-button color="warn" (click)="deleteTask(task.idTask)">Delete</button>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-action-list>
+    </mat-selection-list>
 </div>
