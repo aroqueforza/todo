@@ -7,13 +7,11 @@
         </mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary" (click)="save()">Save</button>
-    <mat-selection-list #tasksList>
-      <mat-action-list *ngFor="let task of tasks">
+      <div *ngFor="let task of tasks">
         <div style="display: flex; justify-content: space-between;">
           <mat-checkbox [checked]="task.completed" (change)="changeOptionValue($event, task)">{{task.taskDescription}}</mat-checkbox>
           <button mat-raised-button color="warn" (click)="deleteTask(task.idTask)">Delete</button>
         </div>
         <mat-divider></mat-divider>
-      </mat-action-list>
-    </mat-selection-list>
+      </div>
 </div>
