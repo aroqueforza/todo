@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpInterceptor, HttpRequest, HttpResponse, HttpHandler, HttpEvent } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -21,15 +21,7 @@ export class SecurityInterceptor implements HttpInterceptor {
     }
 
     return next.handle(request)
-    .pipe(map(event => {
-      if (event instanceof HttpResponse) {
-          var access_token = event.headers.get('access_token');
-          if(access_token) {
-            // auth.setToken(access_token);
-          }
-      }
-      return event;
-    }))
+    .pipe(map(event => { return event; }))
     .pipe(catchError((response: any) => {
       if (response.status === 401) {
         response.error = {error: {message: 'Session expired.'}};
