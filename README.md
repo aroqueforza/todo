@@ -1,27 +1,46 @@
-# TodoApp
+# TODO App - Instrucciones para el Candidato
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Este proyecto es una simple aplicación de lista de tareas pendientes (TODO App). Por favor, siga las instrucciones a continuación para completar la prueba técnica.
 
-## Development server
+## Configuración inicial del entorno
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Clonar el repositorio y moverse a la rama dev**
+    https://github.com/aroqueforza/todo.git
 
-## Code scaffolding
+## Instrucciones para la prueba
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Crear una nueva rama
 
-## Build
+El candidato debe iniciar la prueba creando una nueva rama (nombre del candidato) en el repositorio del proyecto. Esto permitirá un flujo de trabajo más limpio y la posibilidad de revisar cambios de manera aislada.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Consulta a la API para obtener las tareas
 
-## Running unit tests
+El candidato deberá implementar una llamada al servicio de API que se encargue de obtener las tareas. Esto implicará el uso de `HttpClient` y la gestión de posibles errores durante la solicitud.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Mostrar el listado de tareas
 
-## Running end-to-end tests
+Una vez que los datos se obtienen de la API, el candidato debe crear un componente que sea capaz de mostrar la lista de tareas. Esto debería incluir la creación de un modelo de datos y la implementación del binding de datos.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Mensaje de no existencia de tareas
 
-## Further help
+El candidato debe implementar una funcionalidad que muestre un mensaje informativo en caso de que no haya tareas para mostrar.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Actualizar estado de las tareas
+
+El candidato debe crear una funcionalidad que permita al usuario marcar las tareas como completadas. Esto implicará hacer una llamada a la API para actualizar el estado de la tarea y actualizar la vista en consecuencia.
+
+### Crear una nueva tarea
+
+El candidato debe implementar un formulario para crear nuevas tareas. Esto debería incluir la validación del formulario y el uso de la API para guardar la nueva tarea.
+
+### Eliminar una tarea
+
+El candidato debe añadir una opción para eliminar tareas. Esto implicará la implementación de una función de eliminación que haga una llamada a la API y luego actualice la lista de tareas.
+
+### Mostrar tareas completadas en la barra de herramientas
+
+Por último, el candidato debería agregar una funcionalidad que muestre el número de tareas completadas en la barra de herramientas.
+
+## Entrega
+
+Una vez que haya completado todas las tareas, haga un commit de sus cambios y envíe un pull request para su revisión.
