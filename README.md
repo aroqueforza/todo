@@ -4,7 +4,7 @@ Este proyecto es una simple aplicación de lista de tareas pendientes (TODO App)
 
 ## Configuración inicial del entorno
 
-1. **Clonar el repositorio y moverse a la rama dev**
+1. **Clonar el repositorio**
     https://github.com/aroqueforza/todo.git
 
 ## Instrucciones para la prueba
